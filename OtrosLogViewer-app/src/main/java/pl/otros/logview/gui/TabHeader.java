@@ -15,8 +15,9 @@
  ******************************************************************************/
 package pl.otros.logview.gui;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
@@ -24,6 +25,18 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
+import javax.swing.AbstractAction;
+import javax.swing.BorderFactory;
+import javax.swing.Icon;
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
+import javax.swing.KeyStroke;
+import javax.swing.SwingConstants;
 
 public class TabHeader extends JPanel {
 
@@ -129,11 +142,12 @@ public class TabHeader extends JPanel {
   protected void closeTab() {
     int tabNumber = jTabbedPane.indexOfTabComponent(TabHeader.this);
     if (tabNumber != -1) {
-      int showConfirmDialog = JOptionPane.showConfirmDialog(jTabbedPane, "Do you really want to close \"" + label.getText() + "\"?", "Are you sure?",
-          JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
-      if (showConfirmDialog == JOptionPane.OK_OPTION) {
         jTabbedPane.remove(tabNumber);
-      }
+//      int showConfirmDialog = JOptionPane.showConfirmDialog(jTabbedPane, "Do you really want to close \"" + label.getText() + "\"?", "Are you sure?",
+//          JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+//      if (showConfirmDialog == JOptionPane.OK_OPTION) {
+//        jTabbedPane.remove(tabNumber);
+//      }
     }
 
   }
